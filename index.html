@@ -1,9 +1,9 @@
 <div class="module calendarmonth" ng-controller="calendarmonthController">
   <div class="calendar-container">
     <div class="navigation-bar">
-      <koa-icon-button class="arrow-back" icon="arrow-back" ng-click="changeViewMonth(true)"></koa-icon-button>
+      <koa-button class="arrow-back"  ng-click="changeViewMonth(true)">Prev</koa-button>
       <p class="actual-month">{{actualView.format('MMM YYYY')}}</p>
-      <koa-icon-button class="arrow-forward" icon="arrow-forward" ng-click="changeViewMonth()" ></koa-icon-button>
+      <koa-button class="arrow-forward"  ng-click="changeViewMonth()" >Next</koa-button>
     </div>
     <table class="table-calendar">
       <thead>
