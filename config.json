@@ -2,16 +2,16 @@
   "name": "calendarmonth",
   "identifier": "calendarmonth",
   "description": {
-    "es-ES": "",
-    "en-US": ""
+    "es-ES": "Calendario que muestra los eventos de cada mes alojados en Google Calendar. Debes pasar como parámetros la apiKey, el Google CalendarID y el tipo de calendario que quieres ('en' o 'es').",
+    "en-US": "Calendar showing the events of each month hosted in Google Calendar. You must pass the parameters apiKey, Google CalendarID and the type of calendar you want ('en' or 'es')"
   },
   "documentation": {
     "es-ES": "modules/calendarmonth/docs/es_ES.md",
     "en-US": "modules/calendarmonth/docs/en_US.md"
   },
   "descriptionShort": {
-    "es-ES": "",
-    "en-US": ""
+    "es-ES": "Calendario que muestra los eventos de cada mes",
+    "en-US": "Calendar showing the events of each month"
   },
   "icon": "room",
   "type": "A",
@@ -45,7 +45,42 @@
       "src": "bower_components/moment/min/moment-with-locales.min.js"
     }
   ],
-  "config": [],
+  "config": [
+    {
+      "type": "input",
+      "key": "calendarId",
+      "templateOptions": {
+        "type": "text",
+        "label": "Introduce el CalendarID",
+        "required": true
+      }
+    },
+    {
+      "type": "input",
+      "key": "apiKey",
+      "templateOptions": {
+        "type": "text",
+        "label": "Introduce la apiKey",
+        "required": true
+      }
+    },
+    {
+      "type": "select",
+      "key": "locale",
+      "templateOptions": {
+        "label": "Elije el formato e idioma del calendario",
+        "valueProp": "localeOption",
+        "options": [
+            {
+              "localeOption": "en"
+            },
+            {
+              "localeOption": "es"
+            }
+          ]
+      }
+    }
+  ],
   "showOn": {
     "menu": true,
     "market": true,
