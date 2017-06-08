@@ -1,0 +1,107 @@
+<style is="custom-style">
+
+  .calendar-container{
+    margin-left : 20px;
+  }
+  /*CSS navBar */
+  .navigation-bar {
+    display: inline-flex;
+    align-items :baseline;
+    justify-content: space-between;
+  }
+
+  .navigation-bar .actual-month{
+    font-size: 35px;
+    color: #7ea7e9;
+  }
+
+  .navigation-bar .actual-month::first-letter{
+    text-transform: uppercase;
+  }
+
+  /*End CSS navBar*/
+
+  /*CSS Table Calendar*/
+  .table-calendar {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .table-calendar .day-with-event:not(.actual-day) > p{
+    color: #6c7e98;
+  }
+  .table-calendar .weekend{
+    background-color: rgba(245, 246, 251, 0.4);;
+  }
+  .table-calendar .actual-day{
+    border-radius: 50%;
+    background-color: #7ea7e9;
+  }
+  .table-calendar .actual-day > p{
+    color: white !important;
+  }
+  .table-calendar .header-days{
+    width:50px;
+    height: ;
+  }
+
+  .table-calendar  .td-days{
+    margin:0px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+  }
+  .table-calendar .container-days{
+    display: flex;
+    flex-direction: column;
+  }
+  .table-calendar .date-number{
+    text-align: center;
+    font-size: 18px;
+    color: rgba(108, 126, 152, 0.5);
+  }
+  .table-calendar .name-days{
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #6c7e98;
+  }
+  .table-calendar .event-point{
+    border-radius: 50%;
+    width: 5px;
+    height: 5px;
+    background-color: blue;
+  }
+
+  /*End CSS Table Calendar*/
+
+  /*CSS Event Items*/
+  .month-event .description{
+    font-size: 14px;
+    color: rgba(108, 126, 152, 0.5);
+  }
+
+  .month-event .summary{
+    font-size: 18px;
+    color: #6c7e98;
+  }
+
+  .month-event{
+    display: flex;
+    margin : 3px;
+    border-bottom: 1px solid #f5f6fb;
+  }
+
+  .month-event .day{
+    font-size: 18px;
+    text-align: center;
+    color: #6c7e98;
+    margin: 25px;
+  }
+  .empty-month .error-message{
+    font-size: 18px;
+    color: #6c7e98;
+  }
+
+  /*End CSS Event Items*/
+
+</style>

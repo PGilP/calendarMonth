@@ -1,0 +1,19 @@
+{
+  "name": "calendarmonth",
+  "authors": "King",
+  "description": "",
+  "keywords": [
+    "kingofapp",
+    "module"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "dependencies": {
+    "angular-ui-calendar": "^1.0.2"
+  },
+  "resolutions": {
+    "jquery": "2.1.4",
+    "fullcalendar": "2.7.3"
+  }
+}

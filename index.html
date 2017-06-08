@@ -1,0 +1,45 @@
+<div class="module calendarmonth" ng-controller="calendarmonthController">
+  <div class="calendar-container">
+    <div class="navigation-bar">
+      <koa-icon-button class="arrow-back" icon="arrow-back" ng-click="changeViewMonth(true)"></koa-icon-button>
+      <p class="actual-month">{{actualView.format('MMM YYYY')}}</p>
+      <koa-icon-button class="arrow-forward" icon="arrow-forward" ng-click="changeViewMonth()" ></koa-icon-button>
+    </div>
+    <table class="table-calendar">
+      <thead>
+        <tr>
+          <th class="name-days" ng-repeat="nameOfDay in nameDays">{{nameOfDay}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="calendar-weeks" ng-repeat="week in arrWeeks track by $index">
+          <td class="td-days"  ng-repeat="day in week track by $index" ng-class="{'weekend': isWeekend(day,locale)}" >
+            <div class="container-days" ng-if=" isSameMonth(day)">
+              <div class="calendar-days" ng-class="{ 'actual-day': isActualDay(day), 'day-with-event' : day.dot}">
+                <p class="date-number">{{day.date()}}</p>
+              </div>
+              <div class="event-point" ng-if="day.dot"></div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="calendar-items" ng-repeat="event in events | orderBy : 'start.dateTime || start.date'">
+    <koa-item class="month-event">
+      <div class="day" ng-hide="event.start.dateTime">{{event.start.date.substr(8,2)}}</div>
+      <div class="day" ng-hide="event.start.date">{{event.start.dateTime.substr(8,2)}}</div>
+      <div class="text">
+        <div class="summary">{{event.summary}}</div>
+        <div class="description">{{event.description}}</div>
+      </div>
+    </koa-item>
+  </div>
+  <div ng-if="emptyMonthEvents">
+    <koa-item class="empty-month" >
+      <div class="error-message">{{emptyMonthEvents}}</div>
+    </koa-item>
+  </div>
+
+</div>
